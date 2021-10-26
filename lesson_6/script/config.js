@@ -38,7 +38,7 @@ function createBigImage(imagescoll) {
 
             switch (lastImageLen) {
                 case 1:
-                    lastImage[0].remove();
+                    e();
                 case 0:
                     image2 = document.createElement('img');
                     mainB = document.querySelector('.main_big');
