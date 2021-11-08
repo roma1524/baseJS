@@ -1,0 +1,60 @@
+body {
+    background-color: rgb(198, 228, 225);
+}
+
+.main-block {
+    width: 560px;
+    height: 560px;
+    margin: 30px auto;
+    border: 1px solid #000;
+}
+
+
+.block {
+    width: 70px;
+    height: 70px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.black {
+    background: #000;
+}
+
+.white {
+    background: #fff;
+}
+
+.chwhite {
+    color: white;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.chblack {
+    color: black;
+    font-size: 12px;
+    opacity: 0.5;
+}
+
+.rvwhite {
+    color: white;
+    font-size: 12px;
+    opacity: 0.5;
+    transform: rotate(180deg);
+}
+
+.rvblack {
+    color: black;
+    font-size: 12px;
+    opacity: 0.5;
+    transform: rotate(180deg);
+}
+
+.article:after {
+    font-size: 30px;
+    content: 'Л';
+    color: red;
+}

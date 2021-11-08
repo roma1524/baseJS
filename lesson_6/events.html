@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+</head>
+
+<body>
+
+    <button onclick="document.querySelector('#b_5').click();console.log('обманка');" id="b1">Кнопка 1</button>
+    <button id="b2">Кнопка 2</button>
+    <button id="b3">Кнопка 3</button>
+    <button onclick="alert('Клик на В4')" id="b_4">Кнопка 4</button>
+    <button onclick="ch()" id="b_5">Кнопка 5</button>
+
+
+    <a href="#">Ссылка 1</a>
+    <a href="#">Ссылка 2</a>
+    <a href="#">Ссылка 3</a>
+
+    <script>
+
+        function f(e) {
+            switch (e.target) {
+                case links[0]:
+                    for (let i = 0; i < buttons.length; i++) {
+                        i % 2 == 0 ? buttons[i].classList.add('r') : buttons[i].classList.add('b')
+                    }
+                    break;
+                case links[1]:
+                    for (let i = 2; i < buttons.length; i++) {
+                        buttons[i].remove();
+                    }
+                    break;
+                case links[2]:
+                    for (let b of buttons) {
+                        b.style.color = getRandomColor();
+                    }
+                    break;
+            }
+        }
+
+        let buttons = document.querySelectorAll('button');
+        let links = document.querySelectorAll('a');
+
+        for (let link of links) {
+            link.onclick = f;
+        }
+
+        function ch() {
+            document.querySelector('body').style.backgroundColor = getRandomColor();
+        }
+
+        function getRandomColor() {
+            let red = (Math.random() * 255).toFixed(0);
+            let green = (Math.random() * 255).toFixed(0);
+            let blue = (Math.random() * 255).toFixed(0);
+            return "rgb(" + red + "," + green + "," + blue + ")";
+        }
+
+
+        for (let i = 0; i < 3; i++) {
+            buttons[i].onclick = function (e) {
+                let img = document.createElement("img");
+                img.src = "p" + (e.target.id[1] - 1) + ".png";
+                img.onclick = function () {
+                    this.remove();
+                }
+                document.body.append(img);
+                console.log(e.target);
+            }
+
+        }
+
+
+
+    </script>
+    <style>
+        .r {
+            color: red;
+        }
+
+        .b {
+            color: blue;
+        }
+    </style>
+
+</body>
+
+</html>
