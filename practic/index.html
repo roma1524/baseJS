@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practic</title>
+    <script defer src="config.js"></script>
+</head>
+
+<body>
+
+    <p id="comn">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perspiciatis deserunt atque veniam facere
+        unde
+        doloremque iste similique repellat omnis ad saepe dolor, harum exercitationem sit reiciendis ex, nesciunt
+        maiores totam!</p>
+
+
+
+    <script>
+
+
+        var arr = ["Есть", "жизнь", "на", "Марсе"];
+
+        var arrLength = [];
+        for (var i = 0; i < arr.length; i++) {
+            arrLength[i] = arr[i].length;
+        }
+
+        console.log(arrLength); // 4,5,2,5
+
+        var arr1 = ["Есть", "жизнь", "на", "Марсе"];
+        var arr1Length = arr1.map(item => item.length);
+
+        console.log(arr1Length);
+
+
+        /* let arr = ["HTML", "JavaScript", "CSS"];
+
+        let sorted = copySorted(arr);
+
+        function copySorted(ar) {
+
+        }
+
+        alert(sorted); // CSS, HTML, JavaScript
+        alert(arr); // HTML, JavaScript, CSS (без изменений) */
+
+
+
+
+        /* let arr = [5, 2, 1, -10, 8];
+
+        console.log(arr.sort((a, b) => b - a));
+
+        //console.log(arr);
+        //console.log(arr.sort(compareNumeric));
+
+ */
+
+
+
+
+        /* let arr = [5, 3, 8, 1];
+
+        let filtered = filterRange(arr, 1, 4);
+
+        function filterRange(qqq, min, max) {
+            return qqq.filter(item => (min <= item && item <= max));
+        }
+
+        console.log(filtered); // 3,1 (совпадающие значения)
+
+        console.log(arr); // 5,3,8,1 (без изменений) */
+
+
+
+
+
+
+        /*  let arr1 = [5, 3, 8, 1, 13, 17, -5, 43, -1];
+
+         function filterRangeInPlace(ar, a, b) {
+
+             for (let i = 0; i < ar.length; i++) {
+                 let val = ar[i];
+                 if (val < a || val > b) {
+                     ar.splice(i, 1);
+                     i--;
+                 }
+             }
+         }
+         filterRangeInPlace(arr1, 3, 20)
+         console.log(arr1); */
+
+    </script>
+</body>
+
+</html>
