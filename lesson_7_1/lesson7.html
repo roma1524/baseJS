@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Snake</title>
+    <link rel="stylesheet" href="lesson7.css">
+    <script src="lesson7.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <div id="snake-field"></div>
+        <div class="buttons">
+            <div id="snake-start">Старт</div>
+            <div id="snake-renew">Новая игра</div>
+        </div>
+        <div id="snake-field"></div>
+        <div class="score">
+            <span class="score-text">Текущий счёт: </span><span class="score-point">0</span>
+        </div>
+    </div>
+
+    <button>Click</button>
+
+    <script>
+        let count = 0;
+        function gf() {
+
+            count++;
+            if (count == 3) {
+
+                alert("Не жмякай, сломаешь!");
+                count = 0
+            }
+
+        }
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', gf);
+
+
+
+        const products = [
+            {
+                id: 3,
+                price: 127,
+                photos: ["1.jpg", "2.jpg",]
+            },
+            {
+                id: 5,
+                price: 499,
+                photos: []
+            }, {
+                id: 10,
+                price: 26,
+                photos: ["3.jpg"]
+            }, {
+                id: 8,
+                price: 78,
+            },
+        ];
+
+
+
+        let tR = products.filter(item => "photos" in item && item.photos.length > 0);
+        console.log(tR);
+
+        products.sort(function (item1, item2) {
+            return item1.price - item2.price;
+        });
+        console.log(products);
+
+
+
+        /* let uy = "background-color";
+
+        let orr = uy.split('-');
+        let result = orr.map(function (item) {
+            let letters = item.split('');
+            letters[0] = letters[0].toUpperCase();
+            console.log(letters.join(''));
+        }) */
+
+
+
+
+
+    </script>
+</body>
+
+</html>

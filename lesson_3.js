@@ -3,28 +3,30 @@
 // Задание №1 ===================================================>
 
 
-/*
-function isSimple() {     // Функция не идиальна, уверен, что её можно оптимизировать, но, на данный момент, у меня на это не хватает знаний.
-    let num = +prompt('Укажите числовой диапазон');
-    for (let i = 2; i <= num; i++) {
-        if (i == 2) {
-            console.log("Число " + i + " простое");
-        }
-        if (i == 3) {
-            console.log("Число " + i + " простое");
-        }
-        if (i == 5) {
-            console.log("Число " + i + " простое");
-        }
-        if (i == 7) {
-            console.log("Число " + i + " простое");
-        }
-        if (i % i == 0 && i % 1 == 0 && i % 2 != 0 && i % 3 != 0 && i % 5 != 0 && i % 7 != 0) {
-            console.log("Число " + i + " простое");
-        }
-    }
+// Функция, для нахождения простых чисел, в промежутке о 2 до 100
+
+function arrSimpleNumber(){
+let arrSim = [2];  // Изначальное значение в массиве
+let num = 3;       // Значение, с которого мы начинаем обход
+
+for(num; num <= 100; num++){
+if(simpleCheck(num, arrSim)){ // функция в if вернет либо true либо false
+arrSim.push(num);
 }
-isSimple(); */
+}
+return arrSim;
+}
+
+function simpleCheck(n, arr) {
+    let mark = true;
+
+    arr.forEach(elm => {
+    if(!(n % elm)) mark = false;
+    })
+    return mark;
+}
+
+console.log(arrSimpleNumber());
 
 
 // Задание №2 / 3 ===================================================>
