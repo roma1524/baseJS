@@ -4,6 +4,16 @@
 
 // Задание №1 ===================================================>
 
+1. Дан код:
+var a = 1, b = 1, c, d;
+c = ++a; alert(c);           // 2
+d = b++; alert(d);           // 1
+c = (2+ ++a); alert(c);      // 5
+d = (2+ b++); alert(d);      // 4
+alert(a);                    // 3
+alert(b);                    // 3
+Почему код даёт именно такие результаты?
+
 var a = 1, b = 1, c, d;
 c = ++a; alert(c);            // 2      префиксный инкремент, к тому же переменной "а" присвоено значение "1"
 d = b++; alert(d);            // 1      переменной d, присваеваится значение переменной b, к тому же постфиксный инкремент, который не отработает при первом вызове alert.
@@ -13,6 +23,8 @@ alert(a);                    // 3       перевенная "а" переопр
 alert(b);                    // 3       перевенная "b" переопределена итерациями
 
 // Задание №2 ===================================================>
+
+2. Чему будет равен x в примере ниже?
 
 var a = 2;
 var x = 1 + (a *= 2);
@@ -42,42 +54,31 @@ if (a > 0 && b > 0) {    // Тут правильнее наверное был�
 
 // Задание №4 ===================================================>
 
+4. Присвоить переменной "а" значение в промежутке [0..15]. С помощью оператора switch организовать вывод чисел от a до 15.
 
 let a = +prompt('Введите число от 0 до 15');
-switch (a) {
-    case 1:
-        console.log('Переменная "а" равна : 1');
-    case 2:
-        console.log('Переменная "а" равна : 2');
-    case 3:
-        console.log('Переменная "а" равна : 3');
-    case 4:
-        console.log('Переменная "а" равна : 4');
-    case 5:
-        console.log('Переменная "а" равна : 5');
-    case 6:
-        console.log('Переменная "а" равна : 6');
-    case 7:
-        console.log('Переменная "а" равна : 7');
-    case 8:
-        console.log('Переменная "а" равна : 8');
-    case 9:
-        console.log('Переменная "а" равна : 9');
-    case 10:
-        console.log('Переменная "а" равна : 10');
-    case 11:
-        console.log('Переменная "а" равна : 11');
-    case 12:
-        console.log('Переменная "а" равна : 12');
-    case 13:
-        console.log('Переменная "а" равна : 13');
-    case 14:
-        console.log('Переменная "а" равна : 14');
-    case 15:
-        console.log('Переменная "а" равна : 15');
-    default:
-        console.log('Число не из диапазона!')
-}
+            switch (a) {
+                case 0: console.log(a++);
+                case 1: console.log(a++);
+                case 2: console.log(a++);
+                case 3: console.log(a++);
+                case 4: console.log(a++);
+                case 5: console.log(a++);
+                case 6: console.log(a++);
+                case 7: console.log(a++);
+                case 8: console.log(a++);
+                case 9: console.log(a++);
+                case 10: console.log(a++);
+                case 11: console.log(a++);
+                case 12: console.log(a++);
+                case 13: console.log(a++);
+                case 14: console.log(a++);
+                case 15: {
+                    console.log(a++);
+                    break;
+                }
+                default: console.log('Число не из диапазона!')
+            }
 
 
 // Задание №5 ===================================================>
@@ -85,131 +86,99 @@ switch (a) {
 
 /*  Реализовать основные 4 арифметические операции в виде функций с двумя параметрами.Обязательно использовать оператор return.
   */
-
-/*100
-function first(arg1, arg2) {
-    let sum = "";
-    arg1 = +prompt('Введите число');
-    arg2 = +prompt('Введите число');
-    sum = Number(arg1 + arg2);
-    return sum;
+/*
+function summary (a, b) {
+    return a + b;
 }
-console.log(first());
-
-
-
-
-function second(arg1, arg2) {
-    let minus = "";
-    arg1 = +prompt('Введите число');
-    arg2 = +prompt('Введите число');
-    minus = Number(arg1 - arg2);
-    return minus;
+function multiply (a, b) {
+    return a * b;
 }
-console.log(second());
-
-
-
-function third(arg1, arg2) {
-    let divide = "";
-    arg1 = +prompt('Введите число');
-    arg2 = +prompt('Введите число');
-    divide = Number(arg1 / arg2);
-    return divide;
+function divide (a, b) {
+    return a / b;
 }
-console.log(third());
-
-
-
-function fourth(arg1, arg2) {
-    let multiply = "";
-    arg1 = +prompt('Введите число');
-    arg2 = +prompt('Введите число');
-    multiply = Number(arg1 * arg2);
-    return multiply;
-}
-console.log(fourth());
-
+function deduct (a, b) {
+    return a - b;
+} 
+*/
 
 // Задание №6 ===================================================>
 
 
-/* Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции.В зависимости от переданного значения операции выполнить одну из арифметических операций(использовать функции из пункта 3) и вернуть полученное значение(использовать switch).
+/* 6. Реализовать функцию с тремя параметрами: function mathOperation(arg1, arg2, operation), где arg1, arg2 – значения аргументов, operation – строка с названием операции. В зависимости от переданного значения операции выполнить одну из арифметических операций (использовать функции из пункта 5) и вернуть полученное значение (использовать switch).
 */
 /*
-function calc(arg1, arg2, operation) {
+ function calc(arg1, arg2, operation) {
     let totalOfArgument = "";
-    arg1 = +prompt('Введите число');
-    arg2 = +prompt('Введите число');
-    let action = prompt('Желаемое математическое действие?').toLocaleLowerCase();
-    switch (action) {
-        case "+":
-            totalOfArgument = Number(arg1 + arg2);
-            return totalOfArgument;
-            break;
-        case "плюс":
-            totalOfArgument = Number(arg1 + arg2);
-            return totalOfArgument;
-            break;
-        case "сложить":
-            totalOfArgument = Number(arg1 + arg2);
-            return totalOfArgument;
-            break;
-        case "-":
-            totalOfArgument = Number(arg1 - arg2);
-            return totalOfArgument;
-            break;
-        case "минус":
-            totalOfArgument = Number(arg1 - arg2);
-            return totalOfArgument;
-            break;
-        case "отнять":
-            totalOfArgument = Number(arg1 - arg2);
-            return totalOfArgument;
-            break;
-        case "/":
-            totalOfArgument = Number(arg1 / arg2);
-            return totalOfArgument;
-            break;
-        case "разделить":
-            totalOfArgument = Number(arg1 / arg2);
-            return totalOfArgument;
-            break;
-        case "поделить":
-            totalOfArgument = Number(arg1 / arg2);
-            return totalOfArgument;
-            break;
-        case "*":
-            totalOfArgument = Number(arg1 * arg2);
-            return totalOfArgument;
-            break;
-        case "умножить":
-            totalOfArgument = Number(arg1 * arg2);
-            return totalOfArgument;
-            break;
-        case "памножить":
-            totalOfArgument = Number(arg1 * arg2);
-            return totalOfArgument;
-            break;
-        default:
-            alert('Что-то пошло не так');
-    }
+     arg1 = +prompt('Введите число');
+     arg2 = +prompt('Введите число');
+     let action = prompt('Желаемое математическое действие?').toLocaleLowerCase();
+     switch (action) {
+         case "+":
+             return summary(arg1, arg2);
+             break;
+         case "-":
+             return deduct(arg1, arg2);
+             break;
+         case "/":
+             return divide(arg1, arg2);
+             break;
+         case "*":
+             return multiply(arg1, arg2);
+             break;
+         default:
+             alert('Что-то пошло не так');
+     }
 
-}
-console.log(calc());*/
-
+ }
+ console.log(calc());
+*/
 /*
         // Задание №7 ===================================================>
 
 
          * Сравнить null и 0. Попробуйте объяснить результат.
 
-            Насколько я понимаю, null не равен ничему, это как "ничего".Поправьте меня пожалуйста, если я ошибаюсь.
+            Насколько я понимаю, null не равен ничему, это как "ничего".
 
 
 
-         // Задание №8 ===================================================>
+        // Задание №8 ===================================================>
+        
+/*  Камень, ножницы, Бумага */
 
+/*
+<button onclick="rockFunction(event)" value="1">Камень</button>
+        <button onclick="rockFunction(event)" value="2">Ножницы</button>
+        <button onclick="rockFunction(event)" value="3">Бумага</button>
+        <span class="result"></span>
+        <span class="resultUser"></span>
+        <span class="resultPC"></span>
 
-         * С помощью рекурсии организовать функцию возведения числа в степень.Формат: function power(val, pow), где val – заданное число, pow – степень.  // Этот вопрос решить я не успел
-*/
+        <script>
+            let result = document.querySelector('.result');
+            let resultUser = document.querySelector('.resultUser');
+            let resultPC = document.querySelector('.resultPC');
+
+            function rockFunction(event) {
+                let userNum = event.target.value;
+                let pcNum = (Math.random() * (3 - 1) + 1).toFixed();
+                resultUser.innerHTML = `User:  ${userNum}`;
+                resultPC.innerHTML = `PC:  ${pcNum}`;
+
+                checkWinner(userNum, pcNum);
+            }
+
+            function checkWinner(us, pc) {
+                if (us === pc) {
+                    result.innerHTML = 'Both!';
+                } else if (
+                    (us === 1 && pc === 1) ||
+                    (us === 2 && pc === 3) ||
+                    (us === 3 && pc === 1)
+                ) {
+                    result.innerHTML = 'Победитель: User';
+                } else {
+                    result.innerHTML = 'Победитель: PC';
+                }
+            }
+            */
